@@ -1,10 +1,11 @@
 import { router } from './router.js';
+import { msg } from './widgets/msg.js';
 
 document.addEventListener('DOMContentLoaded', function() {
     const main = {
         data() {
             return {
-                url: "",
+                url: "https://affiliate.yanbasok.com",
                 user: {name:"", phone:"", email:"", date:"", auth:""},
                 formData: {},
                 title: "",
@@ -37,9 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             self.page('/statistics');
                         } else if (['/statistics', '/payments', '/sites'].includes(self.$route['path']) && self.user.type == 'admin') {
                             self.page('/campaigns');
-                        } else if (['/campaigns', '/campaign', '/users', '/user', '/statistics', '/payments', '/sites'].includes(self.$route['path']) && self.user.type == 'admin') {
+                        } else if (['/campaigns', '/campaign', '/users', '/user', '/statistics', '/payments', '/sites'].includes(self.$route['path'])) {
                             self.page();
-                        } else if (!['/campaigns', '/campaign', '/users', '/user', '/statistics', '/payments', '/sites'].includes(self.$route['path']) && self.user.type == 'admin') {
+                        } else if (!['/campaigns', '/campaign', '/users', '/user', '/statistics', '/payments', '/sites'].includes(self.$route['path'])) {
                             self.page();
                         }
                     } else {
@@ -85,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     var app = Vue.createApp(main)
+    .component('msg', msg)
     .use(router)
     .mount('#content')
 });
