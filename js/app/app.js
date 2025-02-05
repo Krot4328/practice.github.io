@@ -2,6 +2,7 @@ import { router } from './router.js';
 import { header } from './widgets/header.js';
 import { popup } from './widgets/popup.js';
 import { msg } from './widgets/msg.js';
+import { toogle } from './widgets/toogle.js';
 
 document.addEventListener('DOMContentLoaded', function() {
     const main = {
@@ -54,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
             logout() {
                 this.user = {name:"", phone:"", email:"", date:"", auth:""};
                 this.page('/');
-                window.localStorage.getItem('user', '');
+                window.localStorage.setItem('user', '');
             },
 
             page:function(path = "") {
@@ -91,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .component('Header', header)
     .component('popup', popup)
     .component('msg', msg)
+    .component('toogle', toogle)
     .use(router)
     .mount('#content')
 });

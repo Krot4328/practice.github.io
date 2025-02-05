@@ -94,17 +94,17 @@ export const msg = {
     template: `
         <div class="alertMsg" v-show="alert">
             <div class="wrapper al">
-                <i class="fas fa-times-circle"></i> {{alert}}
+                <span><i class="fas fa-times-circle"></i> {{alert}}</span>
             </div>
         </div>
         <div class="successMsg" v-show="success">
             <div class="wrapper al">
-                <i class="fas fa-check-circle"></i> {{success}}
+                <span><i class="fas fa-check-circle"></i> {{success}}</span>
             </div>
         </div>
         <popup ref="confirm" :title="confirmTitle">
             <div class="al popup-info plr20 ptb20">
-                <i class="fas fa-info-circle"></i> {{confirm}}
+                <span><i class="fas fa-info-circle"></i> {{confirm}}</span>
                 <div class="botBtns">
                     <a class="btnS" href="#" @click.prevent="code=1">Yes</a>
                     <a class="btnS" href="#" @click.prevent="code=2">No</a>
