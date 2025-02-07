@@ -3,6 +3,7 @@ import { header } from './widgets/header.js';
 import { popup } from './widgets/popup.js';
 import { msg } from './widgets/msg.js';
 import { toogle } from './widgets/toogle.js';
+import { img } from './widgets/img.js';
 
 document.addEventListener('DOMContentLoaded', function() {
     const main = {
@@ -93,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .component('popup', popup)
     .component('msg', msg)
     .component('toogle', toogle)
+    .component('Image', img)
     .use(router)
     .mount('#content')
 });
