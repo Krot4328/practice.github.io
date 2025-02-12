@@ -39,10 +39,10 @@ export const header = {
 
                             <ul :class="{active:menu == 1}" v-if="parent.user && parent.user.type && parent.user.type!='admin'">
                                 <li v-if="menu==1" class="al"><i class="fas fa-times" @click="menu=0"></i></li>
-                                <li><router-link to="/statistics"><i class="fas fa-chart-area"></i> Statistics</router-link></li>
-                                <li><router-link to="/ads"><i class="fas fa-image"></i> Ads</router-link></li>
-                                <li><router-link to="/sites"><i class="fas fa-chrome"></i> Sites</router-link></li>
-                                <li><router-link to="/payments"><i class="fas fa-credit-card"></i> Payments</router-link></li>
+                                <li><router-link to="/statistics">Statistics <i class="fas fa-chart-area"></i></router-link></li>
+                                <li><router-link to="/ads">Ads <i class="fas fa-image"></i></router-link></li>
+                                <li><router-link to="/sites">Sites <i class="fab fa-chrome"></i></router-link></li>
+                                <li><router-link to="/payments">Payments <i class="fas fa-credit-card"></i></router-link></li>
                             </ul>
                         </div>
                     </div>

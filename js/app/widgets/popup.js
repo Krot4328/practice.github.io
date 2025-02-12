@@ -24,7 +24,7 @@ export const popup = {
     template: `
         <template v-if="active == 1">
             <div class="popup-back"></div>
-            <div class="popup" :style="{top:top, 'min-width':widthVal, 'margin-left':ml, left:left, height:height}" ref="popup">
+            <div class="popup" :style="{'min-width':widthVal, 'margin-left':ml, left:left, height:height}" ref="popup">
                 <div class="flex head-popup">
                     <div class="w80 ptb20 plr20 segment">
                         <div class="head-title">{{title}}</div>

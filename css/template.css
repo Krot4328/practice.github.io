@@ -8,6 +8,7 @@ html {
 }
 
 body {
+    background-color: #f3f7fd;
     height: 100vh;
     margin: 0;
 }
@@ -166,6 +167,10 @@ table {
     border-collapse: collapse;
 }
 
+.table {
+    padding-bottom: 96px;
+}
+
 .table a {
     transition: color 0.3s ease-in-out;
 }
@@ -228,7 +233,7 @@ th:nth-child(7), td:nth-child(7) { width: 5%; text-align: center; }
 th:nth-child(6), td:nth-child(6) { width: 5%; text-align: center; }
 th:nth-child(5), td:nth-child(5) { width: 5%; text-align: center; }
 th:nth-child(4), td:nth-child(4) { width: 5%; text-align: center; }
-th:nth-child(3), td:nth-child(3) { width: 61%; }
+th:nth-child(3), td:nth-child(3) { width: 61%; text-align: right; }
 th:nth-child(2), td:nth-child(2) { width: 5%; text-align: center; }
 th:nth-child(1), td:nth-child(1) { width: 5%; text-align: center; }
 
@@ -262,6 +267,33 @@ th:nth-child(1), td:nth-child(1) { width: 5%; text-align: center; }
 .userPaymentsList th:nth-child(3), .userPaymentsList td:nth-child(3) { width: 40%; text-align: right; }
 .userPaymentsList th:nth-child(2), .userPaymentsList td:nth-child(2) { width: 5%; text-align: center; }
 .userPaymentsList th:nth-child(1), .userPaymentsList td:nth-child(1) { width: 5%; text-align: center; }
+
+.statsTable th:nth-child(8), .statsTable td:nth-child(8) { width: 5%; text-align: center; }
+.statsTable th:nth-child(7), .statsTable td:nth-child(7) { width: 5%; text-align: center; }
+.statsTable th:nth-child(6), .statsTable td:nth-child(6) { width: 5%; text-align: center; }
+.statsTable th:nth-child(5), .statsTable td:nth-child(5) { width: 5%; text-align: center; }
+.statsTable th:nth-child(4), .statsTable td:nth-child(4) { width: 50%; text-align: right; }
+.statsTable th:nth-child(3), .statsTable td:nth-child(3) { width: 15%; text-align: right; }
+.statsTable th:nth-child(2), .statsTable td:nth-child(2) { width: 10%; text-align: center; }
+.statsTable th:nth-child(1), .statsTable td:nth-child(1) { width: 5%; text-align: center; }
+
+.adsList th:nth-child(5), .adsList td:nth-child(5) { width: 10%; text-align: center; }
+.adsList th:nth-child(4), .adsList td:nth-child(4) { width: 65%; text-align: right; }
+.adsList th:nth-child(3), .adsList td:nth-child(3) { width: 10%; text-align: center; }
+.adsList th:nth-child(2), .adsList td:nth-child(2) { width: 10%; text-align: center; }
+.adsList th:nth-child(1), .adsList td:nth-child(1) { width: 5%; text-align: center; }
+
+.sitesList th:nth-child(6), .sitesList td:nth-child(6) { width: 15%; text-align: center; }
+.sitesList th:nth-child(5), .sitesList td:nth-child(5) { width: 15%; text-align: center; }
+.sitesList th:nth-child(4), .sitesList td:nth-child(4) { width: 15%; text-align: center; }
+.sitesList th:nth-child(3), .sitesList td:nth-child(3) { width: 15%; text-align: center; }
+.sitesList th:nth-child(2), .sitesList td:nth-child(2) { width: 25%; text-align: center; }
+.sitesList th:nth-child(1), .sitesList td:nth-child(1) { width: 15%; text-align: center; }
+
+.paymentRecords th:nth-child(4), .paymentRecords td:nth-child(4) { width: 42%; text-align: right; }
+.paymentRecords th:nth-child(3), .paymentRecords td:nth-child(3) { width: 42%; text-align: right; }
+.paymentRecords th:nth-child(2), .paymentRecords td:nth-child(2) { width: 8%; text-align: center; }
+.paymentRecords th:nth-child(1), .paymentRecords td:nth-child(1) { width: 8%; text-align: center; }
 
 .segment {
     width: auto;
@@ -312,8 +344,10 @@ th:nth-child(1), td:nth-child(1) { width: 5%; text-align: center; }
 }
 
 .popup {
+    transform: translate(0%, -50%);
     position: fixed;
     z-index: 3;
+    top: calc(50% - 80px);
 }
 
 .popup-back {
@@ -364,8 +398,8 @@ input[type="date"] {
     font-size: 13px;
     padding: 10px 15px;
     border-radius: 5px;
-    border: 2px solid #dae1e4;
-    background-color: #f2f6f8;
+    border: 2px solid #e0e6ea;
+    background-color: #f3f7fd;
     text-align: left;
     max-width: 160px;
     min-width: 145px;
