@@ -52,11 +52,11 @@ export const ads = {
             <div id="spinner" v-if="loader"></div>
             <div class="wrapper">
                 <div class="camp-box">
-                    <div class="w10 ptb30 ar">
+                    <div class="ptb30 ar">
                         <h1>Ads</h1>
                     </div>
-                    <div class="w70"></div>
-                    <div class="w20 al ptb20"></div>
+                    <div></div>
+                    <div class="al ptb20"></div>
                 </div>
 
                 <popup ref="copy" :title="'Copy banner'">

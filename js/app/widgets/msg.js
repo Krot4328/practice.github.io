@@ -11,12 +11,15 @@ export const msg = {
             interval: "",
         }
     },
+
     watch: {
 
     },
+
     mounted() {
         this.parent = this.$parent.$parent.$parent;
     },
+
     methods: {
         fadeIn(el, timeout, display) {
             el.style.opacity = 0;
@@ -26,6 +29,7 @@ export const msg = {
                 el.style.opacity = 1;
             }, 10);
         },
+
         fadeOut(el, timeout) {
             el.style.opacity = 1;
             el.style.transition = `opacity ${timeout}ms`;
@@ -35,6 +39,7 @@ export const msg = {
                 el.style.display = 'none';
             }, timeout);
         },
+
         successFun(msg) {
             this.success = msg;
 
@@ -50,6 +55,7 @@ export const msg = {
                 }, 3000);
             }, 100);
         },
+
         alertFun(msg) {
             console.log(msg);
             this.alert = msg;
@@ -67,6 +73,7 @@ export const msg = {
                 }, 3000);
             }, 500);
         },
+
         confirmFun(title, text) {
             this.code = 0;
             var self = this;
@@ -91,6 +98,7 @@ export const msg = {
             });
         }
     },
+    
     template: `
         <div class="alertMsg" v-show="alert">
             <div class="wrapper al">

@@ -4,12 +4,14 @@ export var img = {
             value: ""
         }
     },
+
     mounted() {
         this.parent = this.$parent.$parent.$parent.$parent;
         if (this.modelValue != undefined) {
             this.value = this.parent.url + '/' + this.modelValue;
         }
     },
+
     methods: {
         change(event) {
             var self = this;
@@ -23,6 +25,7 @@ export var img = {
             this.$emit('update:modelValue', event.target.files[0]);
         }
     },
+    
     props: {
         modelValue: String
     },

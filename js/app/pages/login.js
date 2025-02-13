@@ -5,10 +5,12 @@ export const login = {
             parent: ''
         }
     },
+
     mounted:function() {
         this.img = this.randomIntFromInterval(1, 7);
         this.parent = this.$parent.$parent;
     },
+
     methods: {
         randomIntFromInterval:function(min, max) {
             return Math.floor(Math.random() * (max - min + 1) + min)
@@ -32,12 +34,12 @@ export const login = {
                 console.log('errors: ', error);
             });
         },
-
     },
+    
     template: `
         <div class="flex page">
             <msg ref="msg"/>
-            <div id="right-area" class="w40">
+            <div id="right-area">
                 <div class="header">
                     <div class="wrapper flex">
                         <div class="logo">
@@ -73,7 +75,7 @@ export const login = {
                 </div>
             </div>
             
-            <div id="left-area" class="w60">
+            <div id="left-area">
                 <img :src="parent.url+'/app/views/images/Cover_'+img+'.jpg'" />
             </div>
         </div>

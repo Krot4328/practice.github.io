@@ -31,6 +31,7 @@ export const statistics = {
             this.date = firstDayOfMonth.toISOString().substring(0, 10);
             this.date2 = lastDayOfMonth.toISOString().substring(0, 10);
         },
+        
         get:function() {
             var self = this;
             var data = self.parent.toFormData(self.parent.formData);
@@ -57,7 +58,7 @@ export const statistics = {
 
         actionStatistic:function() {
             var self = this;
-            var data = self.parent.toFormData(self.response.formData);
+            var data = self.parent.toFormData(self.parent.formData);
 
             data.append('uid', this.parent.user.id);
 
@@ -99,13 +100,13 @@ export const statistics = {
             <div id="spinner" v-if="loader"></div>
             <div class="wrapper">
                 <div class="camp-box">
-                    <div class="w10 ptb10">
+                    <div class="ptb10">
                         <h2>Statistics</h2>
                     </div>
-                    <div class="w60 ptb20 ac">
+                    <div class="ptb20 ac">
                         <input type="date" v-model="date" @change="get()" /> - <input type="date" v-model="date2" @change="get()" />
                     </div>
-                    <div class="w20 ptb15 al">
+                    <div class="ptb15 al">
                         <a href="#" class="btnS" @click.prevent="parent.formData.copy = data.multi; $refs.copy.active = 1;">
                             <i class="fas fa-images"></i>
                             Multi banners

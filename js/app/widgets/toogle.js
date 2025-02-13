@@ -4,19 +4,23 @@ export var toogle = {
             value: ""
         }
     },
+
     watch: {
         modelValue:function(o, n) {
             this.value = this.modelValue;
         }
     },
+
     mounted() {
         this.value = this.modelValue;
     },
+
     methods: {
         change() {
             this.$emit('update:modelValue', this.value.toString());
         }
     },
+    
     props: {
         modelValue: String
     },

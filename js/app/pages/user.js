@@ -12,6 +12,7 @@ export const user = {
             loader:1 
         } 
     },
+
     mounted: function(){ 
         this.parent = this.$parent.$parent;
 
@@ -23,6 +24,7 @@ export const user = {
         this.get(); 
         this.GetFirstAndLastDate();
     },
+
     methods: {
         GetFirstAndLastDate:function() {
             var year = new Date().getFullYear();
@@ -33,6 +35,7 @@ export const user = {
             this.date = firstDayOfMonth.toISOString().substring(0, 10);
             this.date2 = lastDayOfMonth.toISOString().substring(0, 10);
         },
+
         get:function() {
             var self = this; 
             var data = self.parent.toFormData(self.parent.formData);
@@ -53,6 +56,7 @@ export const user = {
                 self.parent.logout(); 
             });
         },
+
         action:function(){ 
             var self = this;
             var data = self.parent.toFormData(self.parent.formData);
@@ -76,6 +80,7 @@ export const user = {
                 console.log('errors: ',error);
             });
         },
+
         del:async function () { 
             if(await this.$refs.header.$refs.msg.confirmFun("Please confirm next action", "Do you want to delete this user?")) { 
                 var self = this; 
@@ -94,6 +99,7 @@ export const user = {
                 });
             }
         },
+
         actionStatistic:function(){ 
             var self = this; 
             var data = self.parent.toFormData(self.parent.formData);
@@ -117,6 +123,7 @@ export const user = {
                 console.log('errors', error); 
             });
         },
+
         actionPayment:function(){ 
             var self = this; 
             var data = self.parent.toFormData(self.parent.formData);
@@ -142,6 +149,7 @@ export const user = {
                 console.log('errors: ', error); 
             });
         },
+
         delPayment:async function() { 
             if (await this.$refs.header.$refs.msg.confirmFun("Please confirm next action", "Do you want to delete this payment?")) {
                 var self = this;
@@ -160,6 +168,7 @@ export const user = {
                 });
             }
         },
+
         actionSite:function(){ 
             var self = this;
             var data = self.parent.toFormData(self.parent.formData);
@@ -177,6 +186,7 @@ export const user = {
                 console.log('errors', error); 
             });
         },
+
         line:function(item) {
             setTimeout(function() {
                 let dates = [];
@@ -212,6 +222,7 @@ export const user = {
                         });
                     }
                 }
+
                 new Chart(ctx, {
                     type: 'line',
 
@@ -269,6 +280,7 @@ export const user = {
             }, 100);
         },
     },
+    
     template: `
         <div class="inside-content">
             <Header ref="header" />
@@ -279,7 +291,7 @@ export const user = {
                         <div class="ptb30 pb0">
                             <h1 v-if="data && data.info">{{data.info.user}}</h1>
                         </div>
-                        <div class="w50"></div>
+                        <div></div>
                         <div class="al ptb20 pb0">
                             <a class="btnS" href="#" @click.prevent="parent.formData=user; $refs.new.active=1">Edit user <i class="fas fa-edit"></i></a>
                         </div>
@@ -340,13 +352,13 @@ export const user = {
 
                 <div v-if="tab == 1">
                     <div class="flex panel">
-                        <div class="w20 ptb10">
+                        <div class="ptb10">
                             <h2>{{tabs[tab]}}</h2>
                         </div>
-                        <div class="w60 ptb20 ac">
+                        <div class="ptb20 ac">
                             <input type="date" v-model="date" @change="get()" /> - <input type="date" v-model="date2" @change="get()" />
                         </div>
-                        <div class="w20 ptb15 al"></div>
+                        <div class="ptb15 al"></div>
                     </div>
 
                     <popup ref="chart" fullscreen="true" title="Chart">
@@ -439,11 +451,11 @@ export const user = {
 
                 <div v-if="tab == 2">
                     <div class="flex panel aic">
-                        <div class="w30 ptb10">
+                        <div class="ptb10">
                             <h2>{{tabs[tab]}}</h2>
                         </div>
-                        <div class="w50"></div>
-                        <div class="w20 al ptb15">
+                        <div></div>
+                        <div class="al ptb15">
                             <a class="btnS" href="#" @click.prevent="parent.formData = {}; $refs.payment.active=1"><i class="fas fa-plus"></i> Add payment</a>
                         </div>
                     </div>
@@ -524,13 +536,13 @@ export const user = {
 
                 <div v-if="tab == 0">
                     <div class="flex panel">
-                        <div class="w20 ptb10">
+                        <div class="ptb10">
                             <h2>{{tabs[tab]}}</h2>
                         </div>
-                        <div class="w60 ptb20 ac">
+                        <div class="ptb20 ac">
                             <input type="date" v-model="date" @change="get()" /> - <input type="date" v-model="date2" @change="get()" />
                         </div>
-                        <div class="w20 ptb15 al"></div>
+                        <div class="ptb15 al"></div>
                     </div>
 
                     <popup ref="img" title="Banner">

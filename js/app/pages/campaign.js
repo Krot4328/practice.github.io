@@ -256,11 +256,11 @@ export const campaign = {
             <div id="panelTop">
                 <div class="wrapper">
                     <div class="flex edit">
-                        <div class="w30 ptb30 ar">
+                        <div class="ptb30 ar">
                             <h1 v-if="data && data.info">{{data.info.title}}</h1>
                         </div>
-                        <div class="w50"></div>
-                        <div class="w20 al ptb20">
+                        <div></div>
+                        <div class="al ptb20">
                             <a class="btnS" href="#" @click.prevent="parent.formData=data.info; $refs.new.active=1">Edit campaign <i class="fas fa-edit"></i> </a>
                         </div>
                     </div>
@@ -332,13 +332,13 @@ export const campaign = {
             <div id="cam-table">
                 <div class="wrapper">
                     <div class="camp-box">
-                        <div class="w20 ptb30 ar m0">
+                        <div class="ptb30 ar m0">
                             <h2>Ads</h2>
                         </div>
-                        <div class="w60 ptb20 ac">
+                        <div class="ptb20 ac">
                             <input type="date" v-model="date" @change="get()" /> - <input type="date" v-model="date2" @change="get()" />
                         </div>
-                        <div class="w20 al ptb20">
+                        <div class="al ptb20">
                             <a class="btnS" href="#" @click.prevent="parent.formData={}; $refs.ad.active=1"><i class="fas fa-plus"></i> New</a>
                         </div>
                     </div>

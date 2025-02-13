@@ -15,6 +15,7 @@ export const campaigns = {
             all: true
         }
     },
+
     mounted:function() {
         this.parent = this.$parent.$parent;
 
@@ -24,6 +25,7 @@ export const campaigns = {
         this.get();
         this.GetFirstAndLastDate();
     },
+
     methods: {
         GetFirstAndLastDate:function() {
             var year = new Date().getFullYear();
@@ -34,6 +36,7 @@ export const campaigns = {
             this.date = firstDayOfMonth.toISOString().substring(0, 10);
             this.date2 = lastDayOfMonth.toISOString().substring(0, 10);
         },
+        
         get:function() {
             var self = this;
             var data = self.parent.toFormData(self.parent.formData);
@@ -201,7 +204,7 @@ export const campaigns = {
                     </div>
                 </div>
                 
-                <popup ref="chart" fullscreen="true" title="Chart">
+                <popup class="char" ref="chart" fullscreen="true" title="Chart">
                     <div class="flex grid-graph">
                         <div class="w30 ptb25" id="time-range"><input type="date" v-model="date" @change="get();" /> - <input type="date" v-model="date2" @change="get();" /></div>
                         <div class="w70 al">

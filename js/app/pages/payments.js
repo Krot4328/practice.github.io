@@ -41,11 +41,11 @@ export const payments = {
             <div id="spinner" v-if="loader"></div>
             <div class="wrapper">
                 <div class="camp-box">
-                    <div class="w10 ptb10">
+                    <div class="ptb10">
                         <h2>Payments</h2>
                     </div>
-                    <div class="w50"></div>
-                    <div class="w20 ptb15 al"></div>
+                    <div></div>
+                    <div class="ptb15 al"></div>
                 </div>
                 <div class="table paymentRecords" v-if="data.items != ''">
                     <table>

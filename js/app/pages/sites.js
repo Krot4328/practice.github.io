@@ -74,13 +74,13 @@ export const sites = {
             <div id="spinner" v-if="loader"></div>
             <div class="wrapper">
                 <div class="camp-box">
-                    <div class="w20 ptb30 ar">
+                    <div class="ptb30 ar">
                         <h1>Sites</h1>
                     </div>
-                    <div class="w60 ptb20 ac">
+                    <div class="ptb20 ac">
                         <input type="date" v-model="date" @change="get()" /> - <input type="date" v-model="date2" @change="get()" />
                     </div>
-                    <div class="w20 ar ptb20">
+                    <div class="ar ptb20">
 
                     </div>
                 </div>

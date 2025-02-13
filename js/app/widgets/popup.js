@@ -3,6 +3,7 @@ export const popup = {
     data() {
         return { active:0, top:0, widthVal:'500px', ml:'-250px', left:'50%', height:'auto' }
     },
+
     watch: {
         active:function(o, n) {
             if (o == 1 && !this.fullscreen) {
@@ -12,6 +13,7 @@ export const popup = {
                     self.top = "calc(50% - " + height + "px)";
                 }, 10);
             }
+
             if (this.fullscreen) {
                 this.top = 0;
                 this.widthVal = "100%";
@@ -21,10 +23,11 @@ export const popup = {
             }
         }
     },
+    
     template: `
         <template v-if="active == 1">
             <div class="popup-back"></div>
-            <div class="popup" :style="{'min-width':widthVal, 'margin-left':ml, left:left, height:height}" ref="popup">
+            <div class="popup" :style="{'top': top, 'min-width':widthVal, 'margin-left':ml, left:left, height:height}" ref="popup">
                 <div class="flex head-popup">
                     <div class="w80 ptb20 plr20 segment">
                         <div class="head-title">{{title}}</div>

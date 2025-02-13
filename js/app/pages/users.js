@@ -8,6 +8,7 @@ export const users = {
             uid: -1
         }
     },
+
     mounted:function() {
         this.parent = this.$parent.$parent;
 
@@ -16,6 +17,7 @@ export const users = {
         }
         this.get();
     },
+
     methods: {
         get:function() {
             var self = this;
@@ -34,6 +36,7 @@ export const users = {
                 self.parent.logout();
             });
         },
+
         action:function() {
             var self = this;
             var data = self.parent.toFormData(self.parent.formData);
@@ -57,6 +60,7 @@ export const users = {
                 console.log('errors: ', error);
             });
         },
+
         del:async function() {
             if (await this.$refs.header.$refs.msg.confirmFun("Please confirm next action", "Do you want to delete this user?")) {
                 var self = this;
@@ -75,6 +79,7 @@ export const users = {
                 });
             }
         },
+
         copy:async function(text) {
             if (navigator && navigator.clipboard) {
                 await navigator.clipboard.writeText(text);
@@ -86,17 +91,18 @@ export const users = {
             }
         }
     },
+    
     template: `
         <div class="inside-content">
             <Header ref="header" />
             <div id="spinner" v-if="loader"></div>
             <div class="wrapper">
                 <div class="flex camp-box">
-                    <div class="w10 ptb30">
+                    <div class="ptb30">
                         <h1>Users</h1>
                     </div>
-                    <div class="w70"><search /></div>
-                    <div class="w20 al ptb20">
+                    <div><search /></div>
+                    <div class="al ptb20">
                         <a class="btnS" href="#" @click.prevent="parent.formData={}; $refs.new.active=1"><i class="fas fa-plus"></i> New</a>
                     </div>
                 </div>
